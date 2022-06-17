@@ -1,90 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 html {
-  font-size: 10px;
-  font-family: "Permanent Marker", cursive;
-  letter-spacing: 4px;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-family: cursive;
 }
 
 body {
-  background: linear-gradient(#3b3b3b, #2b2b2b);
-  min-height: 100vh;
-  color: whitesmoke;
-  font-size: 1.4rem;
-  margin: 2rem auto;
-  padding: 2rem;
-  text-align: center;
+    background: rgb(159,88,212);
+    background: linear-gradient(135deg, rgba(159,88,212,1) 13%, rgba(6,0,122,1) 100%);
+    min-height: 100vh;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
 }
 
 .player {
-  background: radial-gradient(#211e24, #4f3341);
-  padding: 2rem;
-  border-radius: 2rem;
+    background: rgb(131,178,255);
+    background: linear-gradient(0deg, rgba(131,178,255,1) 0%, rgba(67,87,187,1) 36%, rgba(6,0,122,1) 86%);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 14px rgba(0,0,0,0.82);;
 }
 
 img {
-  width: 50%;
+    width: 45%;
+}
+
+.imagem{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagem::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
 }
 
 #controls {
-  border: 1px lightslategray solid;
-  border-radius: 1rem;
-  padding: 1.6rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .controls_wrapper > span {
-  cursor: pointer;
-  color: lightslategray;
-  font-size: 6rem;
-  padding: 2rem;
+    cursor: pointer;
+    color: white;
+    font-size: 2em;
+    padding: 0 10px;
+    margin: 0 10px;
+}
+
+.controls_wrapper > span:hover {
+    font-size: 2.5em;
+}
+
+.controls_wrapper > span:active {
+    color: #83B2FF;
+    font-size: 1.9em;
 }
 
 #currentSong {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 #songList {
-  overflow: hidden;
-  text-align: left;
+    overflow: hidden;
+    text-align: left;
 }
 
 li {
-  cursor: pointer;
-  padding: 1.5rem;
+    cursor: pointer;
+    padding: 1.5rem;
 }
 
 li:hover {
-  background: #f3644b;
+    background: #06007A;
+    border-radius: 8px;
+}
+
+#volumeSlider {
+    -webkit-appearance: none;
+    width: 60%;
+    height: 8px;
+    border-radius: 8px;  
+    background: #dbe9ff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%; 
+    background: #06007A;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+#volumeSlider::-webkit-slider-thumb:hover{
+    transform: scale(1.25);
 }
 
 progress {
-  width: 100%;
-  height: 3rem;
-  margin-bottom: 1rem;
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
 }
 
 a {
-  color: whitesmoke;
+    color: whitesmoke;
 }
 
 @media (min-width: 800px) {
-  body {
-    max-width: 60vw;
-    font-size: 1.8rem;
-  }
+    body {
+        max-width: 60vw;
+        font-size: 1.8rem;
+    }
 }
 
 @keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  to {
-    transform: scale(1);
-  }
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 .pulse {
-  animation-name: pulse;
-  animation-duration: 0.4s;
+    animation-name: pulse;
+    animation-duration: 0.4s;
 }

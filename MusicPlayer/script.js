@@ -1,11 +1,11 @@
-// Equipe: Camila Azevedo do Vale Santiago e Viviane Rodrigues Nogueira
+// Equipe: Camila Azevedo do Vale Santiago, Antonio Silvestre Pereira Neto e Viviane Rodrigues Nogueira
 const songs = [
     "aTemporaryHigh.mp3",
+    "suit&Tie.mp3",
+    "bones.mp3",
     "theInnocent.mp3",
-    "bensound-funkyelement.mp3",
-    "bensound-happiness.mp3",
-    "bensound-happyrock.mp3",
-    "bensound-thelounge.mp3",
+    "feelGoodInc",
+    "dontBlameMe.mp3"
 ];
 const player = document.getElementById("player");
 
@@ -61,5 +61,8 @@ function updateProgress() {
     if (player.currentTime > 0) {
         const progressBar = document.getElementById("progress");
         progressBar.value = (player.currentTime / player.duration) * 100;
+        progressBar.addEventListener('click', function(x){
+            player.currentTime = (x.offsetX / progressBar.offsetWidth) * player.duration
+        })
     }
 }
